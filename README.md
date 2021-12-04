@@ -25,3 +25,27 @@ npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint
 ```
 mkdir src && mv pages src
 ```
+
+## vscode の設定を追加
+
+- コマンドパレットから基本設定: ワークスペース設定を開く(JSON)を選択して setting.json を開き以下を追加
+
+```
+{
+    "auto-rename-tag.activationOnLanguage": ["*"],
+    // デフォルトのフォーマッタを prettier に設定
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // ファイル保存時、prettier による自動フォーマット
+    "editor.formatOnSave": true,
+    // ファイル保存時、ESLint による自動フォーマット
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+}
+```
+
+- コマンドパレットから推奨事項の拡張機能を表示（ワークスペース）を選択して extensions.json を開き以下を追加
+
+```
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+```
