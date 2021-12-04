@@ -90,3 +90,14 @@ yarn husky add .husky/pre-push "yarn type-check"
 ```
 yarn upgrade --latest
 ```
+
+## material-ui の導入
+
+```
+yarn add @mui/material @emotion/react @emotion/styled @emotion/server @emotion/cache @mui/icons-material
+```
+
+<https://mui.com/getting-started/installation/>
+<https://github.com/mui-org/material-ui/tree/master/examples/nextjs-with-typescript>
+
+- theme.ts, \_app.tsx,\_documet.tsx を作成

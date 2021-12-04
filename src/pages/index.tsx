@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Button from '@mui/material/Button'
 
 export const Home = (): JSX.Element => (
   <div className="container">
@@ -24,6 +25,8 @@ export const Home = (): JSX.Element => (
       >
         Test Button
       </button>
+
+      <Button variant="contained">Hello World</Button>
 
       <div className="grid">
         <a href="https://nextjs.org/docs" className="card">
