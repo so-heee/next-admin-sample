@@ -50,3 +50,37 @@ mkdir src && mv pages src
 ```
   "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
 ```
+
+## husky + lint-staged の導入
+
+husky: git hooks の設定を package.json などからできるようにしてくれるツール
+lint-staged: ステージングしたファイルに対して特定のコマンドを実行できるツール
+
+husky で pre-commit フックに lint-staged を設定し、lint-staged から各種リントツールを実行する
+
+```
+yarn add -D husky lint-staged
+```
+
+- husky を初期化。.husky/pre-commit .husky/pre-push が自動で追加される
+
+```
+yarn husky install
+yarn husky add .husky/pre-commit "yarn lint-staged"
+yarn husky add .husky/pre-push "yarn type-check"
+```
+
+- lint-staged の設定を package.json に追加
+
+```
+
+ "lint:fix": "eslint src --ext ts --ext tsx --fix",
+
+ "lint-staged": {
+   "*.@(ts|tsx)": [
+     "yarn lint",
+     "yarn format",
+     "yarn lint:fix"
+   ]
+ },
+```
