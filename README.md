@@ -84,3 +84,9 @@ yarn husky add .husky/pre-push "yarn type-check"
    ]
  },
 ```
+
+## パッケージを最新に更新
+
+```
+yarn upgrade --latest
+```
