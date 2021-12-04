@@ -21,6 +21,7 @@ npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint
 ## ディレクトリの移動
 
 - src ディレクトリを作成し、pages を移動
+- index.test.tsx のエラーを修正
 
 ```
 mkdir src && mv pages src
