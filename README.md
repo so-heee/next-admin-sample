@@ -101,3 +101,12 @@ yarn add @mui/material @emotion/react @emotion/styled @emotion/server @emotion/c
 <https://github.com/mui-org/material-ui/tree/master/examples/nextjs-with-typescript>
 
 - theme.ts, \_app.tsx,\_documet.tsx を作成
+
+## next.config.js の作成
+
+```
+/** @type {import('next').NextConfig} */
+module.exports = {
+  reactStrictMode: true,
+}
+```
