@@ -116,3 +116,8 @@ module.exports = {
 参考
 <https://github.com/mui-org/material-ui/tree/master/examples/nextjs-with-typescript>
 <https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/dashboard>
+
+## 参考
+
+[MaterialUI](https://mui.com/getting-started/usage/)
+[デザイン](https://material-ui.com/store/previews/material-app/)
