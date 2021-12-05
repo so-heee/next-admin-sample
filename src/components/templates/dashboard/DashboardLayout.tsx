@@ -17,6 +17,9 @@ import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import { mainListItems, secondaryListItems } from './listItems'
+import Brightness4Icon from '@mui/icons-material/Brightness4'
+import Brightness7Icon from '@mui/icons-material/Brightness7'
+import { useTheme } from '@mui/material/styles'
 
 function Copyright(props: any) {
   return (
@@ -64,7 +67,8 @@ const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   '& .MuiDrawer-paper': {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#223043',
+    color: 'white',
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
@@ -94,6 +98,7 @@ export const DashboardLayout = ({
   children: React.ReactNode
   title: string
 }): JSX.Element => {
+  const theme = useTheme()
   const [open, setOpen] = React.useState(true)
   const toggleDrawer = () => {
     setOpen(!open)
@@ -102,7 +107,7 @@ export const DashboardLayout = ({
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="absolute" open={open}>
+      <AppBar position="absolute" elevation={0} open={open}>
         <Toolbar
           sx={{
             pr: '24px', // keep right padding when drawer closed
@@ -133,6 +138,13 @@ export const DashboardLayout = ({
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
             </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            {theme.palette.mode === 'dark' ? (
+              <Brightness7Icon />
+            ) : (
+              <Brightness4Icon />
+            )}
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -167,11 +179,11 @@ export const DashboardLayout = ({
         }}
       >
         <Toolbar />
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
             {title}
           </Typography>
-          <Divider />
+          <Divider sx={{ mt: 2, mb: 2 }} />
           {children}
           <Grid container spacing={3}>
             <Grid item xs={12} md={8} lg={9}></Grid>

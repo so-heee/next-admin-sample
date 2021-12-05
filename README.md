@@ -110,3 +110,9 @@ module.exports = {
   reactStrictMode: true,
 }
 ```
+
+## テンプレートの作成
+
+参考
+<https://github.com/mui-org/material-ui/tree/master/examples/nextjs-with-typescript>
+<https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/templates/dashboard>
