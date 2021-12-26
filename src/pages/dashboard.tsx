@@ -1,4 +1,4 @@
-import { DashboardLayout } from '../components/templates/dashboard/DashboardLayout'
+import { DashboardLayout } from '../components/layouts/dashboard/DashboardLayout'
 
 export default function Index(): JSX.Element {
   return (
