@@ -1,70 +1,64 @@
 import * as React from 'react'
-import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import PeopleIcon from '@mui/icons-material/People'
-import BarChartIcon from '@mui/icons-material/BarChart'
-import LayersIcon from '@mui/icons-material/Layers'
-import AssignmentIcon from '@mui/icons-material/Assignment'
+import PersonIcon from '@mui/icons-material/Person'
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount'
+import ChatIcon from '@mui/icons-material/Chat'
+import Link from 'next/link'
 
 export const mainListItems = (
   <div>
-    <ListItem button>
+    <ListSubheader color="primary">General</ListSubheader>
+    <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+        <DashboardIcon color="primary" />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItem>
-    <ListItem button>
+      <Link href="/dashboard">
+        <ListItemText
+          primary="Dashboard"
+          primaryTypographyProps={{ fontSize: 13, fontWeight: 'bold' }}
+        />
+      </Link>
+    </ListItemButton>
+    <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <PersonIcon color="primary" />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItem>
-    <ListItem button>
+      <Link href="/user">
+        <ListItemText
+          primary="User"
+          primaryTypographyProps={{ fontSize: 13, fontWeight: 'bold' }}
+        />
+      </Link>
+    </ListItemButton>
+    <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
+        <ChatIcon color="primary" />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItem>
+      <Link href="/tweet">
+        <ListItemText
+          primary="Tweet"
+          primaryTypographyProps={{ fontSize: 13, fontWeight: 'bold' }}
+        />
+      </Link>
+    </ListItemButton>
   </div>
 )
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button>
+    <ListSubheader color="primary">Supervisor</ListSubheader>
+    <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        <SupervisorAccountIcon color="primary" />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItem>
+      <ListItemText
+        primary="Account"
+        primaryTypographyProps={{ fontSize: 13, fontWeight: 'bold' }}
+      />
+    </ListItemButton>
   </div>
 )

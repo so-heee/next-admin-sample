@@ -20,6 +20,7 @@ import { mainListItems, secondaryListItems } from './listItems'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { useTheme } from '@mui/material/styles'
+import Logo from '../../atoms/Logo'
 
 function Copyright(props: any) {
   return (
@@ -105,7 +106,7 @@ export const DashboardLayout = ({
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="absolute" elevation={0} open={open}>
+      <AppBar position="absolute" elevation={0} color="inherit" open={open}>
         <Toolbar
           sx={{
             pr: '24px', // keep right padding when drawer closed
@@ -123,15 +124,7 @@ export const DashboardLayout = ({
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-            sx={{ flexGrow: 1 }}
-          >
-            Dashboard
-          </Typography>
+          <Box sx={{ flexGrow: 1 }} />
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
@@ -145,24 +138,27 @@ export const DashboardLayout = ({
             )}
           </IconButton>
         </Toolbar>
+        <Divider />
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <Toolbar
           sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-start',
             px: [1],
           }}
         >
+          <Logo color="primary" sx={{ fontSize: 40 }} />
+          <Box sx={{ flexGrow: 1 }} />
           <IconButton onClick={toggleDrawer}>
             <ChevronLeftIcon />
           </IconButton>
         </Toolbar>
         <Divider />
-        <List>{mainListItems}</List>
+        <List dense>{mainListItems}</List>
         <Divider />
-        <List>{secondaryListItems}</List>
+        <List dense>{secondaryListItems}</List>
       </Drawer>
       <Box
         component="main"
